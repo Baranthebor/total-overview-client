@@ -3,11 +3,11 @@ import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs/internal/Observable';
 import { Company } from 'src/app/model/Company'
 
-// const httpOptions = {
-//   headers : new HttpHeaders({
-//     'Content-Type': 'application/json'
-//   })
-// }
+const httpOptions = {
+  headers : new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +19,6 @@ export class CompanyService {
 
   getCompanies() : Observable<Company[]> {
     return this.httpClient.get<Company[]>(this.apiUrl);
+
   }
 }

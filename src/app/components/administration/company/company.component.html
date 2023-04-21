@@ -1,2 +1,16 @@
-{{numberOfCompanies}}
+<h1>Hallo</h1>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let company of companies">
+    <td>{{ company.id }}</td>
+    <td>{{ company.name }}</td>
+  </tr>
+  </tbody>
+</table>
 
