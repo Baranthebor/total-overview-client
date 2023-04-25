@@ -23,4 +23,9 @@ export class CompanyService {
     this.companies = this.httpClient.get<Company[]>(this.apiUrl);
     return this.companies;
   }
+
+    updateCompany(company : Company) : Observable<Company> {
+      const url = `${this.apiUrl}/${company.Id}`;
+      return this.httpClient.put<Company>(url, company, httpOptions);
+    }
 }

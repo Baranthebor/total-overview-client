@@ -10,19 +10,13 @@
   <tr *ngFor="let company of companies" (click)="onSelect(company)">
     <td>{{ company.Id }}</td>
     <td>{{ company.Name }}</td>
-
   </tr>
   </tbody>
 </table>
 
-
-<!--*ngIf="!company"-->
-<div >
-  <input id="name" [(ngModel)]="company.Name" placeholder="Firmenname">
-</div>
-
-<!--<div>-->
-<!--  {{company.Id}}-->
-<!--  {{company.Name}}-->
-<!--</div>-->
-
+<form name="edit" (ngSubmit)="onSubmit()">
+  <div >
+    <input id="name" name="companyname" [(ngModel)]="companyName" placeholder="Firmenname">
+    <input type="submit" value="Speichern" class="btn"/>
+  </div>
+</form>
