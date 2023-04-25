@@ -10,18 +10,15 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class CompanyComponent {
 
-   companies : Company[];
+    companies? : Company[];
 
-   constructor(private companyService : CompanyService) {
-
-        this.companies = [
-             { id: 1, name: 'Hallo' },
-             { id: 2, name: 'Du' }
-        ];
-        };
+    constructor(private companyService : CompanyService) {
+    };
 
    ngOnInit(): void {
-    // this.companyService.getCompanies().subscribe((companies) => this.companies = companies);
-     console.log(this.companies);
+     this.companyService.getCompanies().subscribe(companies => {
+        this.companies = companies;
+        console.log(this.companies.length);
+     });
    }
 }

@@ -1,16 +1,17 @@
-<h1>Hallo</h1>
-<table class="table table-bordered table-striped">
-  <thead class="thead-dark">
+<h1>Table1</h1>
+<table class="table">
+  <thead>
   <tr>
-    <th scope="col">#</th>
+    <th scope="col">ID</th>
     <th scope="col">Name</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let company of companies">
-    <td>{{ company.id }}</td>
-    <td>{{ company.name }}</td>
+    <td>{{ company.Id }}</td>
+    <td>{{ company.Name }}</td>
   </tr>
   </tbody>
 </table>
+
 

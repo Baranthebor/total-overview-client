@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs/internal/Observable';
 import { Company } from 'src/app/model/Company'
+import { of } from 'rxjs';
 
 const httpOptions = {
   headers : new HttpHeaders({
@@ -17,8 +18,10 @@ export class CompanyService {
 
   constructor(private httpClient : HttpClient) { }
 
-  getCompanies() : Observable<Company[]> {
-    return this.httpClient.get<Company[]>(this.apiUrl);
+  companies? : Observable<Company[]>
 
+  getCompanies() : Observable<Company[]> {
+    this.companies = this.httpClient.get<Company[]>(this.apiUrl);
+    return this.companies;
   }
 }
